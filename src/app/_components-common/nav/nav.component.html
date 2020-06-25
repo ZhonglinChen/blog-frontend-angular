@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active">Zhonglin Chen</a>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/blogs']">Blogs</a>
+      </li>
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link" [class.disabled]="true" [routerLink]="['/demos']">Demos </a>
+      </li>
+
+
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link " [class.disabled]="true" [routerLink]="['/resources']">Resources</a>
+      </li>
+
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link " [class.disabled]="true" [routerLink]="['/crawlers']">Crawlers </a>
+      </li>
+
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link " [class.disabled]="true" [routerLink]="['/devpanel']">DevPanel</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link " [class.disabled]="true" [routerLink]="['/devlogs']">Devlogs</a>
+      </li>
+
+
+      
+    </ul>
+    <a *ngIf="!authService.loggedIn()" [routerLink]="['/login']" routerLinkActive="router-link-active"  class="btn  btn-primary btn-light">Login</a>
+    <a *ngIf="authService.loggedIn()" class="btn  btn-primary btn-light" (click)="logout()">Logout</a>
+
+
+  </div>
+</nav>

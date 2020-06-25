@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="header">
+    <h2>Blog Name</h2>
+  </div>
+  <button *ngIf="authService.loggedIn()" [routerLink]="['/blog/edit/add']">Add new post </button>
+
+  <div class="row">
+
+    <div class="leftcolumn">
+
+      <div class="card" *ngFor="let blog of blogs">
+        <div>
+          <a [routerLink]="['/blogdetail', blog.id]" routerLinkActive="router-link-active">
+            <h2>{{blog.title}}</h2>
+          </a>
+          <h5>{{blog.postDate}}</h5>
+          <p [innerHTML]="blog.content"></p>
+        </div>
+        <div *ngIf="authService.loggedIn()" class=" d-flex justify-content-end">
+          <button (click)="editBlog(blog.id)">Edit</button>&nbsp;
+          <button (click)="deleteBlog(blog.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>About Me</h2>
+        <div class="fakeimg" style="height:100px;">Image</div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      </div>
+      <div class="card">
+        <h3>Popular Post</h3>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div>
+      </div>
+      <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </div> -->
+
+    <!-- <div class="footer">
+    <h2>Footer</h2>
+  </div> -->
+
+  </div>
