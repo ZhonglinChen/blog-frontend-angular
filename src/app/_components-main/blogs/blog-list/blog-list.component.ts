@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class BlogListComponent implements OnInit {
 
   blogs: IBlog[];
-  constructor(private blogService: BlogService, private router: Router, protected authService: AuthService) { }
+  constructor(private blogService: BlogService, private router: Router, public authService: AuthService) { }
 
   ngOnInit() {
     this.blogService.getBlogs().subscribe(
