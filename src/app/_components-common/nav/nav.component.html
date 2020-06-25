@@ -33,8 +33,6 @@
 
       
     </ul>
-    <a *ngIf="!authService.loggedIn()" [routerLink]="['/login']" routerLinkActive="router-link-active"  class="btn  btn-primary btn-light">Login</a>
-    <a *ngIf="authService.loggedIn()" class="btn  btn-primary btn-light" (click)="logout()">Logout</a>
 
 
   </div>
