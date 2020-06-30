@@ -20,7 +20,7 @@ import { TimelineComponent } from './_components-util/timeline/timeline.componen
 import { DevPanelComponent } from './_components-main/dev-panel/dev-panel.component';
 import { DemoListComponent } from './_components-main/demos/demo-list/demo-list.component';
 
-
+import { environment } from 'src/environments/environment';
 
 
 export function tokenGetter() {
@@ -50,8 +50,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:5000'],
-        blacklistedRoutes: ['localhost:5000/api/auth']
+        whitelistedDomains: [environment.baseURL],
+        blacklistedRoutes: [environment.baseURL+'/api/auth']
       }
     })
   ],
